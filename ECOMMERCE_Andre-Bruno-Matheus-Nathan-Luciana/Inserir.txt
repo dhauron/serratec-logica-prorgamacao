@@ -1,0 +1,105 @@
+-- Inserção de 5 Empresas
+INSERT INTO empresa(cnpj, razao_social) VALUES
+('09980221000220','Rei dos salgados'),
+('08663002000890','Pizza2'),
+('04480321000555','Humildao'),
+('08980222000698','Moddas'),
+('03970275000159','Petshow')
+;
+
+INSERT INTO usuario(email, hash_senha) VALUES
+('rick@dsanchez.com','c137'),
+('jerry@smith.com','123456'),
+('summer@molly.com','garbageglommie'),
+('paperf@boi.com','k33pr341'),
+('michael@scotch.com','dunderfamily'),
+('jim@helper.com','athelead'),
+('joao@marcos.com','15398sr'),
+('pedro@victor.com','c00kf0r11f3'),
+('dhauron@serratec.com','c00d1ng'),
+('donald@glover.com','4714n74')
+;
+
+-- Inserção de 5 Funcionários
+INSERT INTO funcionario(cpf, nome, email_usuario, cnpj_empresa) VALUES
+('12389778968','Rick Sanches', 'rick@dsanchez.com','03970275000159'),
+('12248574578','Summer Smith', 'summer@molly.com','08980222000698'),
+('87394745845','Michael Scotch', 'michael@scotch.com','04480321000555'),
+('85644881025','James Helper', 'jim@helper.com','08663002000890'),
+('58966854749','Donald Glover', 'donald@glover.com','09980221000220')
+;
+
+-- Inserção de 5 Endereços
+INSERT INTO endereco(nome_rua, numero_rua, complemento, bairro, cep, cidade, uf) VALUES
+('Maria José', '897', 'casa', 'centro', '28718854', 'Nova Friburgo', 'RJ'),
+('Adhemar de Barros', '372', 'casa', 'Nova Lorena', '19858652', 'Lorena', 'SP'),
+('Cinco de julho', '879', 'apto 301', 'centro', '89315654', 'Joenvile', 'SC'),
+('Adelio', '983', 'apto 103', 'CECAP', '03785214', 'Barbacena', 'MG'),
+('Prof Paulo Freire', '455', 'casa', 'Dos alunos', '25973984', 'Goiania', 'GO')
+;
+
+-- Inserção de 5 Clientes
+INSERT INTO cliente(cpf, primeiro_nome, sobrenome, data_nascimento, email_usuario) VALUES
+('78963545784', 'Bruno','de Paula', '1989-02-21', 'rick@dsanchez.com'),
+('23508617745', 'Marcello','Salerno', '1997-02-03', 'jerry@smith.com'),
+('09734528784', 'Pedro','Ribeiro', '1987-02-24', 'summer@molly.com'),
+('14973565384', 'Leila','Oliveira', '1954-10-14', 'paperf@boi.com'),
+('75809347732', 'Selma','Moraes', '1959-10-26', 'michael@scotch.com')
+;
+
+-- Inserção de 5 Cliente_Endereco
+INSERT INTO cliente_endereco(cpf_cliente, id_endereco) VALUES
+('78963545784', 2),
+('23508617745', 3),
+('09734528784', 4),
+('14973565384', 5),
+('75809347732', 1)
+;
+
+TRUNCATE TABLE cliente_endereco;
+
+-- Inserção de 5 Categorias
+INSERT INTO categoria(nome, descricao) VALUES
+('Salgados','Fritos'),
+('Pizza','forno a lenha'),
+('Comida','caseira'),
+('Roupa','uniformes'),
+('Pet','Alimentação e acessórios')
+;
+
+-- Inserção de 5 Produtos
+INSERT INTO produto(nome, descricao, data_fabricacao, valor, qtd_estoque, id_categoria, cpf_funcionario) VALUES
+('Coxinha', 'de jaca', '2021-09-15', 5.50, 5, 1, '58966854749'),
+('Pizza', 'brotinho', '2021-09-15', 16.50, 10, 2, '85644881025'),
+('Prato feito', 'Grande', '2021-09-15', 17.00, 20, 3, '87394745845'),
+('Calça', 'Social', '2020-05-19', 55.00, 50, 4, '12248574578'),
+('Ração', 'Gato', '2021-09-08', 17.10, 10, 5, '12389778968')
+;
+
+-- Inserção de 5 Pedidos
+INSERT INTO pedido(data_pedido, status, cpf_cliente) VALUES
+('2021-09-15', '0','78963545784'),
+('2021-09-15', '0','23508617745'),
+('2021-09-15', '0','09734528784'),
+('2021-09-08', '0','14973565384'),
+('2021-09-10', '0','75809347732')
+;
+
+
+-- Inserção de 5 Pedido_Produto
+INSERT INTO pedido_produto(id_pedido, id_produto, quantidade) VALUES
+(2, 4, 2),
+(1, 2, 5),
+(3, 1, 3),
+(5, 3, 1),
+(4, 5, 2)
+;
+
+
+
+
+
+
+
+
+

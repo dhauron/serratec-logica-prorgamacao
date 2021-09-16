@@ -1,0 +1,4 @@
+UPDATE produto
+SET qtd_estoque = 42
+WHERE nome = 'Ração' AND descricao = 'Gato';
+
